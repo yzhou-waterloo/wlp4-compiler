@@ -28,19 +28,6 @@ Functions with parameters and return values
 
 Static type checking
 
-Directory Structure
-project/
-├── src/
-│   ├── lexer.l        # Flex lexer specification
-│   ├── parser.y       # Bison parser specification
-│   ├── ast/           # Abstract Syntax Tree structures
-│   ├── semantic/      # Semantic analysis modules
-│   ├── ir/            # Intermediate representation
-│   └── codegen/       # MIPS code generator
-├── tests/             # Test input programs
-├── docs/              # Grammar, design notes
-├── Makefile
-└── README.md
 
 Requirements
 
