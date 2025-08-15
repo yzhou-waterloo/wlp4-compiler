@@ -1,0 +1,226 @@
+.ALPHABET
+0-9 a-z A-Z ( ) { } = ! < > + - * / % , ; [ ] & 
+.STATES
+start
+COMMENT!
+NUM!
+ZERO!
+ID!
+W!
+WA!
+WAI!
+WAIN!
+I!
+IN!
+INT!
+IF!
+E!
+EL!
+ELS!
+ELSE!
+WH!
+WHI!
+WHIL!
+WHILE!
+P!
+PR!
+PRI!
+PRIN!
+PRINT!
+PRINTL!
+PRINTLN!
+PU!
+PUT!
+PUTC!
+PUTCH!
+PUTCHA!
+PUTCHAR!
+G!
+GE1!
+GET!
+GETC!
+GETCH!
+GETCHA!
+GETCHAR!
+R!
+RE!
+RET!
+RETU!
+RETUR!
+RETURN!
+N1!
+NU!
+NUL!
+NULL!
+N!
+NE1!
+NEW!
+D!
+DE!
+DEL!
+DELE!
+DELET!
+DELETE!
+LBRACE!
+RBRACE!
+LPAREN!
+RPAREN!
+BECOMES!
+EQ!
+NOT
+NE!
+LT!
+GT!
+LE!
+GE!
+PLUS!
+MINUS!
+STAR!
+SLASH!
+PCT!
+COMMA!
+SEMI!
+LBRACK!
+RBRACK!
+AMP!
+.TRANSITIONS
+start 0 ZERO
+start 1-9 NUM
+NUM 0-9 NUM
+start ( LPAREN 
+start ) RPAREN
+start { LBRACE
+start } RBRACE
+start = BECOMES
+BECOMES = EQ
+start ! NOT
+NOT = NE
+start < LT
+start > GT
+LT = LE
+GT = GE
+start + PLUS
+start - MINUS
+start * STAR
+start / SLASH
+start % PCT
+start , COMMA
+start ; SEMI
+start [ LBRACK
+start ] RBRACK
+start & AMP
+start w W
+W a WA
+W h WH
+W b-g i-z A-Z ID
+WA i WAI
+WA a-h j-z A-Z ID
+WAI n WAIN
+WAI a-m o-z A-Z ID
+WAIN a-z A-Z ID
+WH i WHI 
+WH a-h j-z A-Z ID
+WHI l WHIL
+WHI a-k m-z A-Z ID
+WHIL e WHILE 
+WHIL a-d f-z A-Z ID
+WHILE a-z A-Z ID
+start i I
+I n IN
+I f IF 
+I a-e g-m o-z A-Z ID
+IN t INT 
+IN a-s u-z A-Z  ID 
+INT a-z A-Z ID 
+IF a-z A-Z ID
+start e E
+E l EL
+E a-k m-z A-Z ID
+EL s ELS
+EL a-r t-z A-Z ID
+ELS e ELSE
+ELS a-d f-z A-Z ID
+ELSE a-z A-Z ID
+start p P 
+P r PR
+P a-q s t v-z A-Z ID
+PR i PRI
+PR a-h j-z A-Z ID
+PRI n PRIN
+PRI a-m o-z A-Z ID
+PRIN t PRINT
+PRIN a-s u-z A-Z ID
+PRINT l PRINTL
+PRINT a-k m-z A-Z ID
+PRINTL n PRINTLN 
+PRINTL a-m o-z A-Z ID
+PRINTLN a-z A-Z ID
+P u PU
+PU t PUT
+PU a-s u-z A-Z ID
+PUT c PUTC
+PUT a b d-z A-Z ID
+PUTC h PUTCH
+PUTC a-g i-z A-Z ID
+PUTCH a PUTCHA
+PUTCH b-z A-Z ID
+PUTCHA r PUTCHAR
+PUTCHA a-q s-z A-Z ID
+PUTCHAR a-z A-Z ID
+start g G
+G e GE1
+G a-d f-z A-Z ID
+GE1 t GET
+GE1 a-s u-z A-Z ID
+GET c GETC
+GET a b d-z A-Z ID
+GETC h GETCH
+GETC a-g i-z A-Z ID
+GETCH a GETCHA
+GETCH b-z A-Z ID
+GETCHA r GETCHAR
+GETCHA a-q s-z A-Z ID
+GETCHAR a-z A-Z ID
+start n N
+N e NE1
+N a-d f-z A-Z ID
+NE1 w NEW
+NE1 a-v x-z A-Z ID
+NEW a-z A-Z ID
+start N N1
+N1 U NU
+N1 a-z A-T V-Z ID
+NU L NUL
+NU a-z A-K M-Z ID
+NUL L NULL
+NUL a-z A-K M-Z ID
+NULL a-z A-Z ID
+start r R
+R e RE
+R a-d f-z A-Z ID 
+RE t RET
+RE a-s u-z A-Z ID 
+RET u RETU
+RET a-t v-z A-Z ID 
+RETU r RETUR
+RETU a-q s-z A-Z ID 
+RETUR n RETURN
+RETUR a-m o-z A-Z ID 
+RETURN a-z A-Z ID 
+start d D
+D e DE
+D a-d f-z A-Z ID 
+DE l DEL
+DE a-k m-z A-Z ID 
+DEL e DELE
+DEL a-d f-z A-Z ID 
+DELE t DELET
+DELE a-s u-z A-Z ID 
+DELET e DELETE
+DELET a-d f-z A-Z ID 
+DELETE a-z A-Z ID 
+start a b c f h j-m o q s-v x-z A-M O-Z ID
+ID a-z A-Z ID
+SLASH / COMMENT
+COMMENT 0-9 a-z A-Z ( ) { } = ! < > + - * / % , ; [ ] & COMMENT
+.INPUT
