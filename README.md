@@ -2,23 +2,24 @@
 A simple compiler made for the WLP4 language a simplified, C-like language designed for educational purposes. This project was developed as part of the CS 241: Foundations of Sequential Programs course.
 
 
-Overview
+# Overview
 
 The compiler takes WLP4 source code and produces MIPS assembly code.
 It implements the full compilation pipeline:
 
-Lexical Analysis 
+- **Lexical Analysis**
 
-Parsing (SLR(1))
+- **Parsing (SLR(1))**
 
-Semantic Analysis (type checking, type annotation)
+- **Semantic Analysis (type checking, type annotation)**
 
-Code Generation (MIPS assembly)
+- **Code Generation (MIPS assembly)**
 
 
-Source Language: Wlp4
-Target Language: MIPS Assembly
-Key Features:
+- **Source Language**: Wlp4
+- **Target Language**: MIPS Assembly
+
+# Key Features:
 
 Supports int and int* data types
 
@@ -29,7 +30,7 @@ Functions with parameters and return values
 Static type checking
 
 
-Requirements
+# Requirements
 
 Language: C++17
 
@@ -40,16 +41,17 @@ Dependencies:
 
 GCC or Clang
 
-Build Instructions
-# From project root
+# Build Instructions
+From project root
+```bash
 make
-
+```
 This will produce an executable named wlp4compiler
 
 Usage
+```bash
 ./wlp4compiler <input_file> [options]
-
-
+```
 Authors
 
 Yang Zhou
